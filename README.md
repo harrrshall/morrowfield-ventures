@@ -1,6 +1,6 @@
 # Morrowfield Ventures
 
-A standalone, responsive concept website for a small early-stage investment firm operating across India and Southeast Asia.
+A standalone, responsive public website for a small early-stage investment firm operating across India and Southeast Asia.
 
 ## Preview locally
 
@@ -15,8 +15,9 @@ Open `http://127.0.0.1:4173` in a browser.
 ## Structure
 
 - `index.html` contains the complete semantic page structure and written content.
+- `portfolio.html` contains the dedicated, filterable portfolio directory and shareable company profiles.
 - `styles.css` contains the responsive editorial design system.
-- `script.js` provides portfolio filtering, detail dialogs, navigation state, reveal motion, and form confirmation.
+- `script.js` provides portfolio filtering, shareable detail dialogs, navigation state, reveal motion, and the private email-draft contact flow.
 - `assets` contains self-hosted fonts, the favicon, and original editorial photography.
 
-The build has no package or runtime dependencies.
+The build has no package or runtime dependencies. Contact details entered on the site remain in the browser and are passed to the visitor's email app as a draft; the website does not transmit or store them.

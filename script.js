@@ -118,6 +118,17 @@ const portfolio = {
     year: "2025",
     stage: "Pre-seed",
     partner: "Kavya Rao"
+  },
+  adamata: {
+    index: "13",
+    company: "Adamata",
+    sector: "Waste robotics",
+    description: "AI-assisted sorting systems designed to raise recovery quality and worker productivity across Southeast Asia’s overlooked plastic waste streams.",
+    base: "Jakarta",
+    year: "2026",
+    stage: "Pre-seed",
+    partner: "Daniel Teo",
+    website: "https://www.adamata.co/"
   }
 };
 
@@ -153,21 +164,27 @@ const notes = {
 
 const body = document.body;
 const menuButton = document.querySelector(".menu-button");
-const menuLabel = menuButton.querySelector("span");
 const navLinks = Array.from(document.querySelectorAll(".site-nav a"));
+const menuLabel = menuButton?.querySelector("span");
 
 function closeMenu() {
   body.classList.remove("menu-open");
-  menuButton.setAttribute("aria-expanded", "false");
-  menuLabel.textContent = "Menu";
+  if (menuButton) {
+    menuButton.setAttribute("aria-expanded", "false");
+  }
+  if (menuLabel) {
+    menuLabel.textContent = "Menu";
+  }
 }
 
-menuButton.addEventListener("click", () => {
-  const opening = !body.classList.contains("menu-open");
-  body.classList.toggle("menu-open", opening);
-  menuButton.setAttribute("aria-expanded", String(opening));
-  menuLabel.textContent = opening ? "Close" : "Menu";
-});
+if (menuButton && menuLabel) {
+  menuButton.addEventListener("click", () => {
+    const opening = !body.classList.contains("menu-open");
+    body.classList.toggle("menu-open", opening);
+    menuButton.setAttribute("aria-expanded", String(opening));
+    menuLabel.textContent = opening ? "Close" : "Menu";
+  });
+}
 
 navLinks.forEach((link) => link.addEventListener("click", closeMenu));
 
@@ -246,7 +263,9 @@ filterButtons.forEach((button) => {
       }
     });
 
-    portfolioCount.textContent = String(visible);
+    if (portfolioCount) {
+      portfolioCount.textContent = String(visible);
+    }
   });
 });
 
@@ -261,16 +280,73 @@ const portfolioFields = {
   stage: document.getElementById("dialog-stage"),
   partner: document.getElementById("dialog-partner")
 };
+const portfolioProfileLink = document.getElementById("dialog-profile-link");
+const portfolioCompanyLink = document.getElementById("dialog-company-link");
+const isPortfolioPage = body.classList.contains("portfolio-page");
+
+function setPortfolioUrl(projectKey) {
+  if (!isPortfolioPage) {
+    return;
+  }
+
+  const url = new URL(window.location.href);
+  if (projectKey) {
+    url.searchParams.set("company", projectKey);
+  } else {
+    url.searchParams.delete("company");
+  }
+  window.history.replaceState({}, "", url);
+}
+
+function openPortfolio(projectKey, updateUrl = true) {
+  const project = portfolio[projectKey];
+  if (!project || !portfolioDialog) {
+    return;
+  }
+
+  Object.keys(portfolioFields).forEach((key) => {
+    const field = portfolioFields[key];
+    if (field) {
+      field.textContent = project[key];
+    }
+  });
+
+  if (portfolioProfileLink) {
+    portfolioProfileLink.href = `portfolio.html?company=${encodeURIComponent(projectKey)}`;
+  }
+
+  if (portfolioCompanyLink) {
+    const hasWebsite = Boolean(project.website);
+    portfolioCompanyLink.hidden = !hasWebsite;
+    if (hasWebsite) {
+      portfolioCompanyLink.href = project.website;
+      portfolioCompanyLink.textContent = `Visit ${project.company} ↗`;
+    }
+  }
+
+  if (updateUrl) {
+    setPortfolioUrl(projectKey);
+  }
+
+  if (!portfolioDialog.open) {
+    portfolioDialog.showModal();
+  }
+}
 
 portfolioRows.forEach((row) => {
   row.addEventListener("click", () => {
-    const project = portfolio[row.dataset.project];
-    Object.keys(portfolioFields).forEach((key) => {
-      portfolioFields[key].textContent = project[key];
-    });
-    portfolioDialog.showModal();
+    openPortfolio(row.dataset.project);
   });
 });
+
+if (portfolioDialog) {
+  const requestedProject = new URLSearchParams(window.location.search).get("company");
+  if (requestedProject) {
+    openPortfolio(requestedProject, false);
+  }
+
+  portfolioDialog.addEventListener("close", () => setPortfolioUrl());
+}
 
 const noteDialog = document.getElementById("note-dialog");
 const noteFields = {
@@ -280,21 +356,27 @@ const noteFields = {
   copy: document.getElementById("note-dialog-copy")
 };
 
-document.querySelectorAll(".note-row").forEach((row) => {
-  row.addEventListener("click", () => {
-    const note = notes[row.dataset.note];
-    noteFields.label.textContent = note.label;
-    noteFields.date.textContent = note.date;
-    noteFields.title.textContent = note.title;
-    noteFields.copy.replaceChildren();
-    note.copy.forEach((paragraph) => {
-      const element = document.createElement("p");
-      element.textContent = paragraph;
-      noteFields.copy.appendChild(element);
+if (noteDialog) {
+  document.querySelectorAll(".note-row").forEach((row) => {
+    row.addEventListener("click", () => {
+      const note = notes[row.dataset.note];
+      if (!note) {
+        return;
+      }
+
+      noteFields.label.textContent = note.label;
+      noteFields.date.textContent = note.date;
+      noteFields.title.textContent = note.title;
+      noteFields.copy.replaceChildren();
+      note.copy.forEach((paragraph) => {
+        const element = document.createElement("p");
+        element.textContent = paragraph;
+        noteFields.copy.appendChild(element);
+      });
+      noteDialog.showModal();
     });
-    noteDialog.showModal();
   });
-});
+}
 
 document.querySelectorAll(".detail-dialog").forEach((dialog) => {
   dialog.querySelector(".dialog-close").addEventListener("click", () => dialog.close());
@@ -308,13 +390,38 @@ document.querySelectorAll(".detail-dialog").forEach((dialog) => {
 const briefForm = document.getElementById("brief-form");
 const formStatus = document.getElementById("form-status");
 
-briefForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const data = new FormData(briefForm);
-  const name = String(data.get("name") || "there").trim().split(" ")[0];
-  formStatus.textContent = `Thank you, ${name}. Your brief is ready for the team’s next review.`;
-  briefForm.reset();
-  formStatus.focus();
-});
+if (briefForm && formStatus) {
+  briefForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-document.getElementById("current-year").textContent = String(new Date().getFullYear());
+    const data = new FormData(briefForm);
+    const recipient = briefForm.dataset.recipient || "";
+    const name = String(data.get("name") || "").trim();
+    const email = String(data.get("email") || "").trim();
+    const company = String(data.get("company") || "").trim();
+    const base = String(data.get("base") || "").trim();
+    const stage = String(data.get("stage") || "").trim();
+    const note = String(data.get("note") || "").trim();
+    const subject = `Founder brief / ${company}`;
+    const message = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Company: ${company}`,
+      `Primary base: ${base}`,
+      `Stage: ${stage}`,
+      "",
+      "What we are building:",
+      note
+    ].join("\n");
+
+    formStatus.textContent = "Your email draft is ready to review. This page did not send, upload, or store your details.";
+    briefForm.reset();
+    formStatus.focus();
+    window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+  });
+}
+
+const currentYear = document.getElementById("current-year");
+if (currentYear) {
+  currentYear.textContent = String(new Date().getFullYear());
+}

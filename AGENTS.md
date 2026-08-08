@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This repository contains the complete public website for Morrowfield Ventures, a early-stage investment firm focused on India and Southeast Asia. It is a static, dependency-free website intended to feel like a credible small fund: specific, restrained, editorial, and easy to maintain.
+This repository contains the complete public website for Morrowfield Ventures, an early-stage investment firm focused on India and Southeast Asia. It is a static, dependency-free website intended to feel like a credible small fund: specific, restrained, editorial, and easy to maintain.
 
 Use this file as the operating brief for any agent that continues the work. Read it before changing source files.
 
@@ -12,7 +12,7 @@ Use this file as the operating brief for any agent that continues the work. Read
 - The approved visual direction is called **Field Ledger**.
 - The implementation uses semantic HTML, plain CSS, and plain JavaScript.
 - There is no package manager, framework, bundler, CMS, server, database, analytics tool, or form backend.
-- All people, companies, addresses, contact details, fund figures, testimonials, notes, and investment activity shown on the website are fictional.
+- The site narrative and most people, companies, fund details, and investment activity were authored for this project. Adamata and its official website are real, and the public contact email belongs to the repository owner. Verify any further real-world replacement before publishing it.
 - Original editorial images and self-hosted fonts are committed in `assets`.
 - The canonical public repository is `https://github.com/harrrshall/morrowfield-ventures`.
 - The production site is published from the repository root with GitHub Pages at `https://harrrshall.github.io/morrowfield-ventures/`.
@@ -36,6 +36,7 @@ The tone is calm, direct, observant, and operational. Copy should sound like exp
 ├── AGENTS.md
 ├── README.md
 ├── index.html
+├── portfolio.html
 ├── script.js
 ├── styles.css
 └── assets
@@ -94,6 +95,10 @@ Responsive layout changes occur at `1100px`, `900px`, and `650px`. Reduced-motio
 
 Do not introduce gradients, glass effects, oversized pills, floating decoration, generic startup illustrations, excessive cards, or a separate visual language for new sections. Reuse the existing rules, typography, colors, spacing, and interaction weight.
 
+### `portfolio.html`
+
+Owns the dedicated portfolio directory. It repeats the portfolio ledger so visitors can browse and filter companies away from the home page, and it supports shareable `?company=` profile URLs. Keep its ledger rows synchronized with `index.html` and `script.js`.
+
 ### `script.js`
 
 Owns all client-side content records and behavior:
@@ -107,10 +112,10 @@ Owns all client-side content records and behavior:
 - Portfolio rows populate and open the native portfolio dialog.
 - Note rows populate and open the native note dialog.
 - Dialogs close from their close button, backdrop click, or native Escape behavior.
-- The contact form validates in the browser, shows a local confirmation, and resets.
+- The contact form validates in the browser, creates a reviewable email draft, shows a local confirmation, and resets.
 - The footer year is generated from the current date.
 
-The contact form does not transmit or store submissions. Do not represent it as a working delivery channel until a real endpoint, consent model, error state, privacy disclosure, and spam protection are implemented.
+The contact form does not transmit or store submissions. It opens a draft in the visitor's email app. Do not represent it as a direct delivery channel until a real endpoint, consent model, error state, privacy disclosure, and spam protection are implemented.
 
 ### `assets`
 
@@ -122,7 +127,7 @@ Some content appears in both HTML and JavaScript. Update both sides in the same 
 
 ### Portfolio entries
 
-Every `.portfolio-row` in `index.html` has:
+Every `.portfolio-row` in `index.html` and `portfolio.html` has:
 
 - `data-sector`, which must match a filter button value
 - `data-project`, which must match a key in the `portfolio` object
@@ -138,6 +143,7 @@ The matching `portfolio` record in `script.js` supplies:
 - `year`
 - `stage`
 - `partner`
+- optional `website`, only for a verified official company URL
 
 When adding or removing a company, also update the displayed company total in the fund strip if needed. The live filter count is calculated automatically.
 
@@ -171,11 +177,12 @@ Update the relevant hero copy, hero facts, fund strip, approach copy, footer, an
 ### Add a portfolio company
 
 1. Add a `.portfolio-row` in `index.html` with a unique `data-project` key.
-2. Use an existing `data-sector` value or add a filter with a matching value.
-3. Add the full record under the same key in `script.js`.
-4. Renumber later entries if the ordering changes.
-5. Update the static company total where appropriate.
-6. Test the All filter, the chosen sector filter, the count, and the dialog.
+2. Add the matching `.portfolio-row` in `portfolio.html`.
+3. Use an existing `data-sector` value or add a filter with a matching value.
+4. Add the full record under the same key in `script.js`.
+5. Renumber later entries if the ordering changes.
+6. Update the static company total where appropriate.
+7. Test the All filter, the chosen sector filter, the count, dialog, and shareable profile URL on both pages.
 
 ### Add a field note
 
@@ -186,7 +193,7 @@ Update the relevant hero copy, hero facts, fund strip, approach copy, footer, an
 
 ### Connect the contact form
 
-Replace the local submit handler only after a real delivery service is selected. Preserve native browser validation. Add pending, success, and error states. Prevent duplicate submissions. Add privacy and consent copy if personal data leaves the browser. Never commit a secret or private API key to this repository.
+Replace the email-draft handler only after a real delivery service is selected. Preserve native browser validation. Add pending, success, and error states. Prevent duplicate submissions. Add privacy and consent copy if personal data leaves the browser. Never commit a secret or private API key to this repository.
 
 ### Add a new page
 
