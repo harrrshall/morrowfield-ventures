@@ -15,7 +15,7 @@ Use this file as the operating brief for any agent that continues the work. Read
 - The site narrative and most people, companies, fund details, and investment activity were authored for this project. Adamata and its official website are real, and the public contact email belongs to the repository owner. Verify any further real-world replacement before publishing it.
 - Original editorial images and self-hosted fonts are committed in `assets`.
 - The canonical public repository is `https://github.com/harrrshall/morrowfield-ventures`.
-- The production site is published from the repository root with GitHub Pages at `https://harrrshall.github.io/morrowfield-ventures/`.
+- The production site is published from the repository root with GitHub Pages at `https://nirvanavp.com/`. The default project URL redirects to the custom domain.
 
 ## Product intent
 
@@ -34,6 +34,7 @@ The tone is calm, direct, observant, and operational. Copy should sound like exp
 ```text
 .
 ├── AGENTS.md
+├── CNAME
 ├── README.md
 ├── index.html
 ├── portfolio.html
@@ -257,7 +258,7 @@ Deployment checklist:
 2. Commit only the intended website and handoff changes.
 3. Push `main` to `origin`.
 4. Wait for GitHub Pages to report `built`.
-5. Verify `https://harrrshall.github.io/morrowfield-ventures/` returns successfully.
+5. Verify `https://nirvanavp.com/` returns successfully.
 6. Check at least the HTML, stylesheet, script, fonts, favicon, and all four images on the deployed origin.
 
 ## Definition of done

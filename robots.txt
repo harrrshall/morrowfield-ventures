@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://harrrshall.github.io/morrowfield-ventures/sitemap.xml
+Sitemap: https://nirvanavp.com/sitemap.xml
