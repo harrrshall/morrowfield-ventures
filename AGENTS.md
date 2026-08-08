@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This repository contains the complete public website for Morrowfield Ventures, a fictional early-stage investment firm focused on India and Southeast Asia. It is a static, dependency-free website intended to feel like a credible small fund: specific, restrained, editorial, and easy to maintain.
+This repository contains the complete public website for Morrowfield Ventures, a early-stage investment firm focused on India and Southeast Asia. It is a static, dependency-free website intended to feel like a credible small fund: specific, restrained, editorial, and easy to maintain.
 
 Use this file as the operating brief for any agent that continues the work. Read it before changing source files.
 
