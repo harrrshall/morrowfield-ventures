@@ -8,7 +8,7 @@ Use this file as the operating brief for any agent that continues the work. Read
 
 ## Current state
 
-- The site is a responsive single-page experience.
+- The site has a responsive single-page home experience and a dedicated portfolio directory.
 - The approved visual direction is called **Field Ledger**.
 - The implementation uses semantic HTML, plain CSS, and plain JavaScript.
 - There is no package manager, framework, bundler, CMS, server, database, analytics tool, or form backend.
@@ -67,10 +67,10 @@ The section order is intentional:
 2. Hero and investment facts
 3. Fund overview strip
 4. Approach, principles, and four-step process
-5. Portfolio ledger and founder testimonials
+5. Portfolio ledger and post-investment support
 6. Team
 7. Field notes
-8. Contact form and office details
+8. Contact form and regional contact details
 9. Footer and legal line
 10. Portfolio and note dialogs
 
@@ -147,7 +147,7 @@ The matching `portfolio` record in `script.js` supplies:
 - `partner`
 - optional `website`, only for a verified official company URL
 
-When adding or removing a company, also update the displayed company total in the fund strip if needed. The live filter count is calculated automatically.
+When adding or removing a company, update the portfolio heading and static count on both HTML pages. The live filter count is calculated automatically.
 
 ### Field notes
 
