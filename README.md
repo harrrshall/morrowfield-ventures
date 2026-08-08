@@ -19,5 +19,6 @@ Open `http://127.0.0.1:4173` in a browser.
 - `styles.css` contains the responsive editorial design system.
 - `script.js` provides portfolio filtering, shareable detail dialogs, navigation state, reveal motion, and the private email-draft contact flow.
 - `assets` contains self-hosted fonts, the favicon, and original editorial photography.
+- `robots.txt` and `sitemap.xml` expose the two public pages to search crawlers.
 
 The build has no package or runtime dependencies. Contact details entered on the site remain in the browser and are passed to the visitor's email app as a draft; the website does not transmit or store them.

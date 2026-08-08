@@ -83,7 +83,7 @@ address {
 }
 
 ::selection {
-  background: #c65f46;
+  background: #a94431;
   color: #fffdf7;
 }
 
@@ -192,7 +192,7 @@ address {
 }
 
 .site-nav .nav-contact:hover {
-  background: #c65f46;
+  background: #a94431;
   color: #fffdf7;
 }
 
@@ -296,7 +296,7 @@ main,
 }
 
 .button-primary:hover {
-  background: #c65f46;
+  background: #a94431;
   color: #fffdf7;
 }
 

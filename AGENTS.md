@@ -37,7 +37,9 @@ The tone is calm, direct, observant, and operational. Copy should sound like exp
 ├── README.md
 ├── index.html
 ├── portfolio.html
+├── robots.txt
 ├── script.js
+├── sitemap.xml
 ├── styles.css
 └── assets
     ├── favicon.svg
