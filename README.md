@@ -1,4 +1,4 @@
-# Morrowfield Ventures
+# Nirvana Venture Partners
 
 A standalone, responsive public website for a small early-stage investment firm operating across India and Southeast Asia.
 

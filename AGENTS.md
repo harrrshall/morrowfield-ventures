@@ -1,8 +1,8 @@
-# Morrowfield Ventures website agent handoff
+# Nirvana Venture Partners website agent handoff
 
 ## Purpose
 
-This repository contains the complete public website for Morrowfield Ventures, an early-stage investment firm focused on India and Southeast Asia. It is a static, dependency-free website intended to feel like a credible small fund: specific, restrained, editorial, and easy to maintain.
+This repository contains the complete public website for Nirvana Venture Partners, an early-stage investment firm focused on India and Southeast Asia. It is a static, dependency-free website intended to feel like a credible small fund: specific, restrained, editorial, and easy to maintain.
 
 Use this file as the operating brief for any agent that continues the work. Read it before changing source files.
 
@@ -21,7 +21,7 @@ Use this file as the operating brief for any agent that continues the work. Read
 
 The website should communicate five things quickly:
 
-1. Morrowfield invests at pre-seed and seed.
+1. Nirvana Venture Partners invests at pre-seed and seed.
 2. Initial cheques are US$250K to US$500K.
 3. The focus is practical technology across India and Southeast Asia.
 4. Founders work directly with a small investing team.
