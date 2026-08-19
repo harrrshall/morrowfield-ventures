@@ -291,6 +291,10 @@ main,
   transition: background-color 180ms ease, color 180ms ease;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 .button-primary {
   color: #a94431;
 }
@@ -869,7 +873,7 @@ main,
   aspect-ratio: 3 / 4;
   filter: contrast(1.02);
   object-fit: cover;
-  object-position: center 23%;
+  object-position: center top;
   transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 

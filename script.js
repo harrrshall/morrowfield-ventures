@@ -1,129 +1,141 @@
 const portfolio = {
-  sableroute: {
+  bijak: {
     index: "01",
-    company: "SableRoute",
-    sector: "Trade systems",
-    description: "Compliance and document workflow for mid-sized exporters moving goods across South and Southeast Asia.",
+    company: "Bijak",
+    sector: "Agricultural trade",
+    description: "Bijak builds trading tools for India’s agricultural supply chain, covering grains and fresh produce. Buyers and sellers use the platform to find counterparties, agree terms, and settle trades. Public materials describe separate lines for domestic commodity trade, mandi linkages, and export.",
+    base: "Gurugram",
+    year: "2022",
+    stage: "Seed",
+    partner: "Mira Sen",
+    website: "https://bijak.in/"
+  },
+  detect: {
+    index: "02",
+    company: "Detect Technologies",
+    sector: "Industrial inspection",
+    description: "Detect Technologies builds workplace intelligence software for factories and energy sites. Its T-Pulse product uses cameras and computer vision to watch safety, inspections, and day-to-day operations. The work is meant to sit on existing industrial floors rather than replace the plant.",
     base: "Chennai",
     year: "2022",
-    stage: "Pre-seed",
-    partner: "Mira Sen"
-  },
-  groveframe: {
-    index: "02",
-    company: "Groveframe",
-    sector: "Food processing software",
-    description: "Production planning, traceability, and order management for independent agricultural processors.",
-    base: "Coimbatore",
-    year: "2022",
     stage: "Seed",
-    partner: "Kavya Rao"
+    partner: "Kavya Rao",
+    website: "https://detecttechnologies.com/"
   },
-  rillgrid: {
+  batterysmart: {
     index: "03",
-    company: "RillGrid",
-    sector: "Distributed energy",
-    description: "Forecasting, settlement, and uptime software for commercial microgrids and distributed power operators.",
-    base: "Hyderabad",
+    company: "Battery Smart",
+    sector: "Battery swapping",
+    description: "Battery Smart operates a swapping network for electric three-wheelers in Indian cities. Drivers exchange a depleted pack for a charged one instead of waiting on a plug. The company is registered in New Delhi and serves commercial EV operators who need predictable uptime.",
+    base: "New Delhi",
     year: "2023",
     stage: "Pre-seed",
-    partner: "Kavya Rao"
+    partner: "Daniel Teo",
+    website: "https://batterysmart.in/"
   },
-  tinbird: {
+  niramai: {
     index: "04",
-    company: "Tinbird Health",
-    sector: "Clinic operations",
-    description: "A clinical workflow and patient follow-up system for neighbourhood women’s health centres.",
-    base: "Pune",
-    year: "2023",
-    stage: "Seed",
-    partner: "Mira Sen"
-  },
-  loomwise: {
-    index: "05",
-    company: "Loomwise",
-    sector: "Textile quality systems",
-    description: "Computer vision quality control that works with existing textile production lines and operator routines.",
-    base: "Tiruppur",
-    year: "2023",
-    stage: "Pre-seed",
-    partner: "Mira Sen"
-  },
-  pollendesk: {
-    index: "06",
-    company: "PollenDesk",
-    sector: "Supplier finance",
-    description: "Purchase planning and supplier payments for emerging food and personal care brands.",
+    company: "Niramai",
+    sector: "Breast screening",
+    description: "Niramai develops Thermalytix, a contactless breast health screening test that uses thermal imaging and software. The device is designed for clinics and outreach settings where conventional mammography is hard to place. The scan does not use ionizing radiation and can be run with privacy for the patient.",
     base: "Bengaluru",
     year: "2023",
     stage: "Seed",
-    partner: "Daniel Teo"
+    partner: "Mira Sen",
+    website: "https://niramai.com/"
   },
-  quarrypath: {
+  stellapps: {
+    index: "05",
+    company: "Stellapps",
+    sector: "Dairy systems",
+    description: "Stellapps digitises dairy collection with connected hardware and software. Products cover cattle monitoring, milk procurement at village centres, chilling, and cold-chain tracking. The tools are built for cooperatives and processors that still run much of the chain on paper.",
+    base: "Bengaluru",
+    year: "2023",
+    stage: "Pre-seed",
+    partner: "Kavya Rao",
+    website: "https://www.stellapps.com/"
+  },
+  amartha: {
+    index: "06",
+    company: "Amartha",
+    sector: "Microfinance",
+    description: "Amartha is an Indonesian digital finance company that funds women-led micro businesses. Field officers and a credit platform underwrite group loans in villages and small towns. The firm also offers partnership lending for banks and other institutions that want to reach the same borrowers.",
+    base: "Jakarta",
+    year: "2023",
+    stage: "Seed",
+    partner: "Daniel Teo",
+    website: "https://amartha.com/"
+  },
+  recykal: {
     index: "07",
-    company: "QuarryPath",
-    sector: "Low-carbon materials",
-    description: "Field workflow and batch intelligence for manufacturers producing lower-carbon building materials.",
-    base: "Chennai",
+    company: "Recykal",
+    sector: "Circular materials",
+    description: "Recykal runs a digital platform for waste aggregation and circular materials in India. It connects waste generators, aggregators, and recyclers so recovered material can be tracked and sold with clearer provenance. The work sits in plastics, packaging, and related recovery streams.",
+    base: "Hyderabad",
     year: "2024",
     stage: "Pre-seed",
-    partner: "Kavya Rao"
+    partner: "Kavya Rao",
+    website: "https://www.recykal.com/"
   },
-  civicloom: {
+  koltiva: {
     index: "08",
-    company: "Civicloom",
-    sector: "Public service software",
-    description: "Multilingual case management for organisations delivering employment, health, and civic programmes.",
+    company: "Koltiva",
+    sector: "Agri traceability",
+    description: "Koltiva builds traceability software for agricultural supply chains across Southeast Asia and beyond. KoltiTrace records farm origin, handling, and compliance data from smallholders through processors. Buyers use it to show where a crop came from and how it was handled.",
     base: "Jakarta",
     year: "2024",
     stage: "Seed",
-    partner: "Daniel Teo"
+    partner: "Daniel Teo",
+    website: "https://www.koltiva.com/"
   },
-  folklane: {
+  superprocure: {
     index: "09",
-    company: "Folklane",
-    sector: "Retail operations",
-    description: "Inventory and merchandising tools built for regional lifestyle stores and their distributed suppliers.",
-    base: "Jaipur",
+    company: "SuperProcure",
+    sector: "Freight software",
+    description: "SuperProcure is freight software for Indian manufacturers and traders. It covers vehicle sourcing, indent allocation, in-plant movement, live tracking, proof of delivery, and freight accounting. The product is used where truck placement and documentation still take too much coordination.",
+    base: "Kolkata",
     year: "2024",
     stage: "Pre-seed",
-    partner: "Mira Sen"
+    partner: "Mira Sen",
+    website: "https://www.superprocure.com/"
   },
-  harborgrain: {
+  intellolabs: {
     index: "10",
-    company: "Harborgrain",
-    sector: "Food procurement",
-    description: "A procurement network connecting independent food manufacturers with verified regional suppliers.",
-    base: "Ho Chi Minh City",
+    company: "Intello Labs",
+    sector: "Produce grading",
+    description: "Intello Labs uses computer vision to grade fruits and vegetables as they move through packing lines. Cameras score size, colour, and defects so lots can be sorted with less guesswork than a purely manual inspection. Graded lots can then be offered through the company’s digital mandi tools.",
+    base: "Gurugram",
     year: "2024",
     stage: "Seed",
-    partner: "Daniel Teo"
+    partner: "Kavya Rao",
+    website: "https://www.intellolabs.com/"
   },
-  driftwell: {
+  rekosistem: {
     index: "11",
-    company: "Driftwell Carbon",
-    sector: "Cold-chain measurement",
-    description: "Emissions and energy measurement for distributed cold chains across food and pharmaceutical logistics.",
-    base: "Singapore",
+    company: "Rekosistem",
+    sector: "Waste services",
+    description: "Rekosistem provides waste collection and recycling services in Indonesian cities. Households and businesses book pickups and follow what happens to the material through a digital account. The company sits between daily collection and downstream recycling partners.",
+    base: "Jakarta",
     year: "2025",
     stage: "Pre-seed",
-    partner: "Daniel Teo"
+    partner: "Daniel Teo",
+    website: "https://www.rekosistem.com/"
   },
-  pikofleet: {
+  khatabook: {
     index: "12",
-    company: "PikoFleet",
-    sector: "Commercial EV software",
-    description: "Battery uptime and route planning software for light commercial electric vehicle fleets.",
+    company: "Khatabook",
+    sector: "Digital ledgers",
+    description: "Khatabook is a digital bahi khata for small Indian shops. Owners record credit given to customers, send collection reminders, and keep sales and inventory on phone or desktop. The product is built for merchants who still run much of the day in a paper ledger.",
     base: "Bengaluru",
     year: "2025",
     stage: "Pre-seed",
-    partner: "Kavya Rao"
+    partner: "Mira Sen",
+    website: "https://khatabook.com/"
   },
   adamata: {
     index: "13",
     company: "Adamata",
     sector: "Waste robotics",
-    description: "AI-assisted sorting systems designed to raise recovery quality and worker productivity across Southeast Asia’s overlooked plastic waste streams.",
+    description: "Adamata develops AI-assisted sorting systems for plastic waste recovery in Southeast Asia. The machines are designed to raise recovery quality and worker productivity on material streams that larger plants often skip. The company is based in Jakarta and publishes its product work at adamata.co.",
     base: "Jakarta",
     year: "2026",
     stage: "Pre-seed",
@@ -312,15 +324,26 @@ function openPortfolio(projectKey, updateUrl = true) {
   });
 
   if (portfolioProfileLink) {
-    portfolioProfileLink.href = `portfolio.html?company=${encodeURIComponent(projectKey)}`;
+    if (isPortfolioPage) {
+      portfolioProfileLink.hidden = true;
+      portfolioProfileLink.removeAttribute("href");
+    } else {
+      portfolioProfileLink.hidden = false;
+      portfolioProfileLink.href = `portfolio.html?company=${encodeURIComponent(projectKey)}`;
+      portfolioProfileLink.textContent = `View ${project.company} profile`;
+    }
   }
 
   if (portfolioCompanyLink) {
-    const hasWebsite = Boolean(project.website);
-    portfolioCompanyLink.hidden = !hasWebsite;
-    if (hasWebsite) {
+    if (project.website) {
+      portfolioCompanyLink.hidden = false;
       portfolioCompanyLink.href = project.website;
       portfolioCompanyLink.textContent = `Visit ${project.company} ↗`;
+      portfolioCompanyLink.target = "_blank";
+      portfolioCompanyLink.rel = "noopener";
+    } else {
+      portfolioCompanyLink.hidden = true;
+      portfolioCompanyLink.removeAttribute("href");
     }
   }
 
